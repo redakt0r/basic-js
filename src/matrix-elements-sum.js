@@ -27,13 +27,10 @@ function getMatrixElementsSum(matrix) {
   for (let i = 0; i < cols; i++) {
     wasZero = false;
     beforeZero = 0;
-    console.log(`-----------------------`);
     for (let j = rows - 1; j >= 0; j--) {
-      console.log(`matrix[${j}][${i}]`, matrix[j][i]);
       if (matrix[j][i] ===0) {
         wasZero = true;
         beforeZero = 0;
-        console.log(`wasZero`, wasZero)
       }
       !wasZero ? beforeZero += matrix[j][i]: beforeZero += 0;
       wasZero ? sumAboveZeros += matrix[j][i] : sumAboveZeros += 0;
