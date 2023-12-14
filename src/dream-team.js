@@ -21,14 +21,18 @@ function createDreamTeam(members) {
     return typeof item === 'string';
   }
 
-  function pickFirstLetter(item) {
+  function pickFirstUpperCaseLetter(name) {
+    return name.trim().split('')[0].toUpperCase();
+  }
+
+  function addLetter(item) {
     if (checkIsString(item)) {
-      dreamTeamLetters.push(item.trim().split('')[0].toUpperCase());
+      dreamTeamLetters.push(pickFirstUpperCaseLetter(item));
     }
     return '';
   }
 
-  members.forEach(pickFirstLetter)
+  members.forEach(addLetter)
 
   return dreamTeamLetters.sort().join('');
 }
