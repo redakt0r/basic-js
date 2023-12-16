@@ -20,8 +20,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 class VigenereCipheringMachine {
-  constructor(isDirect) {
-    this.isDirect = !isDirect;
+  constructor(isDirect = true) {
+    this.isDirect = isDirect;
   }
 
   encrypt(message, key) {
